@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Interactive Image Gallery</title>
+    <style>
+        /* Global Styles for the Page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Gallery Container */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Image Section */
+        .main-image {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Caption for Main Image */
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Navigation Arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .arrow.left {
+            left: 15px;
+        }
+
+        .arrow.right {
+            right: 15px;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Thumbnail Section */
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .thumbnail-container img {
+            width: 100px;
+            height: 70px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail-container img:hover,
+        .thumbnail-container img.active {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #4caf50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-image {
+                height: 300px;
+            }
+
+            .thumbnail-container img {
+                width: 80px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thumbnail-container img {
+                width: 60px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Main Image Section -->
+        <div class="main-image" role="main" aria-label="Main displayed image">
+            <button class="arrow left" aria-label="Previous Image">&#8249;</button>
+            <img id="mainImage" src="image1.jpg" alt="Image 1">
+            <div class="caption" id="caption">Caption for Image 1</div>
+            <button class="arrow right" aria-label="Next Image">&#8250;</button>
+        </div>
+
+        <!-- Thumbnails Section -->
+        <div class="thumbnail-container" id="thumbnails">
+            <!-- Add more thumbnails to make it lengthy -->
+            <img src="C:\Users\HP\Downloads\pexels-christian-alemu-127251395-29960386.jpg" alt="Image 1" class="active" data-caption="Caption for Image 1">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-grizzlybear-401080.jpg" alt="Image 2" data-caption="Caption for Image 2">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-pavel-danilyuk-9065654.jpg" alt="Image 3" data-caption="Caption for Image 3">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-seanrvalentine-7032973.jpg" alt="Image 4" data-caption="Caption for Image 4">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-jeremy-bishop-1260133-2922672.jpg" alt="Image 5" data-caption="Caption for Image 5">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-flaviophotart-17844735.jpg" alt="Image 6" data-caption="Caption for Image 6">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-tdcat-347729.jpg" alt="Image 7" data-caption="Caption for Image 7">
+
+
+            <img src="C:\Users\HP\Downloads\pexels-freestockpro-3278215.jpg" alt="Image 8" data-caption="Caption for Image 8">
+
+
+            <img src="C:\Users\HP\Downloads\frozen_forest_2-wallpaper-1920x1080.jpg" alt="Image 9" data-caption="Caption for Image 9">
+
+
+            <img src="C:\Users\HP\Downloads\small_creek_snowy_mountain_landscape-wallpaper-1920x1080.jpg" alt="Image 10" data-caption="Caption for Image 10">
+
+
+            <img src="C:\Users\HP\Downloads\a_picturesque_log_cabin_by_the_lake_mountains_winter-wallpaper-1920x1080.jpg" alt="Image 11" data-caption="Caption for Image 11">
+
+
+            <img src="C:\Users\HP\Downloads\timeless_winter_scene-wallpaper-1920x1080.jpg" alt="Image 12" data-caption="Caption for Image 12">
+
+
+            <img src="C:\Users\HP\Downloads\winter_snow_ruka_peak_visit_finland-wallpaper-1920x1080.jpg" alt="Image 12" data-caption="Caption for Image 13">
+            
+
+            <img src="C:\Users\HP\Downloads\pexels-michael-steinberg-95604-342943.jpg" alt="Image 12" data-caption="Caption for Image 15">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Variables and Elements
+        const thumbnails = document.querySelectorAll('#thumbnails img');
+        const mainImage = document.getElementById('mainImage');
+        const caption = document.getElementById('caption');
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+        let currentIndex = 0;
+
+        // Array of images and captions
+        const images = Array.from(thumbnails).map(img => ({
+            src: img.src,
+            alt: img.alt,
+            caption: img.dataset.caption
+        }));
+
+        // Preload images
+        images.forEach(image => {
+            const img = new Image();
+            img.src = image.src;
+        });
+
+        // Thumbnail click event
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                setActiveImage(index);
+            });
+        });
+
+        // Navigate left
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            setActiveImage(currentIndex);
+        });
+
+        // Navigate right
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            setActiveImage(currentIndex);
+        });
+
+        // Set active image and caption
+        function setActiveImage(index) {
+            mainImage.style.opacity = 0;
+            setTimeout(() => {
+                mainImage.src = images[index].src;
+                mainImage.alt = images[index].alt;
+                caption.textContent = images[index].caption;
+                mainImage.style.opacity = 1;
+            }, 200);
+
+            thumbnails.forEach((thumbnail, i) => {
+                thumbnail.classList.toggle('active', i === index);
+            });
+
+            currentIndex = index;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                leftArrow.click();
+            } else if (event.key === 'ArrowRight') {
+                rightArrow.click();
+            }
+        });
+    </script>
+</body>
+</html>
