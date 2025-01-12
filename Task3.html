@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        header {
+            background: #4caf50;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            font-weight: bold;
+            color: white;
+            padding: 10px 15px;
+            background-color: #45a049;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #3e8e41;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #about img {
+            width: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+
+        #projects .project {
+            margin-bottom: 20px;
+        }
+
+        #projects .project h3 {
+            margin-bottom: 10px;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #contact form input[type="submit"] {
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #contact form input[type="submit"]:hover {
+            background: #3e8e41;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #4caf50;
+            color: white;
+        }
+        @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    section {
+        padding: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>A showcase of my skills, projects, and contact information</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="C:\Users\HP\Downloads\pexels-michael-steinberg-95604-342943.jpg" alt="Profile Picture">
+        <p>
+            Hi, I'm sujithas, a passionate front-end developer with a love for creating beautiful and functional
+            user interfaces. I enjoy solving problems and bringing ideas to life on the web.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: Portfolio Website</h3>
+            <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+            <a href="pro1.html" target="_blank"><u>view project</a></u>
+        </div>
+        <div class="project">
+            <h3>Project 2: To-Do List App</h3>
+            <p>A simple and efficient to-do list application with a clean user interface.</p>
+            <a href="pro2.html" target="_blank"><u>view project</a></u>
+        </div>
+        <div class="project">
+            <h3>Project 3: Color Plate gnerator</h3>
+            <p>A tool designed to generate cohesive color palettes for design projects. Features include random palette generation, color customization, and export options.</p>
+            <a href="pro3.html" target="_blank"><u>view project</a></u>        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling for Navigation Links
+        const navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute("href").slice(1);
+                const targetSection = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 20,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // Simple Contact Form Validation
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                alert("Thank you for your message!");
+                contactForm.reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+</body>
+</html>
+-------------------------Pro1------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .todo-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+        li.completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .delete {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button id="addTask">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const addTask = document.getElementById('addTask');
+        const taskList = document.getElementById('taskList');
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify([...taskList.children].map(li => ({
+                text: li.firstChild.textContent.trim(),
+                completed: li.classList.contains('completed')
+            }))));
+        }
+
+        function loadTasks() {
+            const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+            tasks.forEach(task => addTaskToList(task.text, task.completed));
+        }
+
+        function addTaskToList(task, completed = false) {
+            const li = document.createElement('li');
+            li.textContent = task;
+            if (completed) li.classList.add('completed');
+
+            const deleteSpan = document.createElement('span');
+            deleteSpan.textContent = '❌';
+            deleteSpan.className = 'delete';
+            deleteSpan.onclick = () => {
+                li.remove();
+                saveTasks();
+            };
+            li.appendChild(deleteSpan);
+
+            li.onclick = () => {
+                li.classList.toggle('completed');
+                saveTasks();
+            };
+
+            taskList.appendChild(li);
+            saveTasks();
+        }
+
+        addTask.onclick = () => {
+            if (taskInput.value.trim()) {
+                addTaskToList(taskInput.value.trim());
+                taskInput.value = '';
+            }
+        };
+
+        loadTasks();
+    </script>
+</body>
+</html>
+------------------------------Pro2------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: white;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .timer {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+        <input type="datetime-local" id="datetimeInput">
+        <button id="startBtn">Start Countdown</button>
+        <div class="timer" id="timerDisplay">00:00:00</div>
+    </div>
+    <script>
+        const datetimeInput = document.getElementById('datetimeInput');
+        const startBtn = document.getElementById('startBtn');
+        const timerDisplay = document.getElementById('timerDisplay');
+        let interval;
+
+        startBtn.addEventListener('click', () => {
+            if (interval) clearInterval(interval);
+            const targetDate = new Date(datetimeInput.value).getTime();
+            if (isNaN(targetDate)) return alert('Please enter a valid date and time.');
+
+            interval = setInterval(() => {
+                const now = Date.now();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    clearInterval(interval);
+                    timerDisplay.textContent = "Time's Up!";
+                } else {
+                    const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+                    const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                    const seconds = Math.floor(diff / 1000) % 60;
+                    timerDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+-------------------------------Pro3-----------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .palette {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 150px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .color-box:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Palette Generator</h1>
+    <button id="generatePalette">Generate Palette</button>
+    <div class="palette" id="palette"></div>
+    <script>
+        const palette = document.getElementById('palette');
+        const generatePaletteButton = document.getElementById('generatePalette');
+
+        function generateRandomColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+        }
+
+        function createColorBox(color) {
+            const colorBox = document.createElement('div');
+            colorBox.className = 'color-box';
+            colorBox.style.backgroundColor = color;
+            colorBox.textContent = color;
+            colorBox.onclick = () => copyToClipboard(color);
+            return colorBox;
+        }
+
+        function copyToClipboard(color) {
+            navigator.clipboard.writeText(color).then(() => {
+                alert(`Copied ${color} to clipboard!`);
+            });
+        }
+
+        function generatePalette() {
+            palette.innerHTML = ''; // Clear the existing palette
+            for (let i = 0; i < 5; i++) {
+                const color = generateRandomColor();
+                const colorBox = createColorBox(color);
+                palette.appendChild(colorBox);
+            }
+        }
+
+        generatePaletteButton.addEventListener('click', generatePalette);
+
+        // Generate an initial palette on page load
+        generatePalette();
+    </script>
+</body>
+</html>
